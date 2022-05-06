@@ -6,6 +6,7 @@ use App\Article;
 use App\Rules\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class ArticleController extends Controller
 {
@@ -16,6 +17,11 @@ class ArticleController extends Controller
      */
     public function index()
     {
+//        $all = Article::all();
+//        foreach($all as $a){
+//            $a->slug =Str::slug($a->title)."_".uniqid();
+//            $a->update();
+//        }
         $articles = Article::when(isset(request()->search),function ($q){
             $search = request()->search;
            return $q->where('title','LIKE',"%$search%")->orWhere('description','LIKE',"%$search%");

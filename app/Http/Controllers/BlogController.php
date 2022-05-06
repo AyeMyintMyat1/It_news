@@ -16,9 +16,12 @@ class BlogController extends Controller
         return view('blog.index',compact('articles'));
     }
 
-    public function detail($id){
-        $article = Article::find($id);
+    public function detail($slug){
+//        return $slug;
+        $article = Article::where('slug',$slug)->first();
+//        return $article;
         $next = Article::where('id','>',$article->id)->first();
+//        return $next;
         $previous = Article::where('id','<',$article->id)->latest('id')->first();
         return view('blog.detail',compact('article','next','previous'));
     }

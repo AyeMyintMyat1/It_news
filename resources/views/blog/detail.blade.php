@@ -33,7 +33,7 @@
                 <div class="nav d-flex justify-content-between p-3">
 
                        @isset($next)
-                        <a href="{{ route('detail',$next->id) }}"
+                        <a href="{{ route('detail',$next->slug) }}"
                            class="btn btn-outline-primary page-mover rounded-circle">
                             <i class="feather-chevron-left"></i>
                         </a>
@@ -42,7 +42,7 @@
                         Read All
                     </a>
                            @isset($previous)
-                               <a href="{{ route('detail',$previous->id) }}"
+                               <a href="{{ route('detail',$previous->slug) }}"
                                   class="btn btn-outline-primary page-mover rounded-circle">
                                    <i class="feather-chevron-right"></i>
                                </a>
