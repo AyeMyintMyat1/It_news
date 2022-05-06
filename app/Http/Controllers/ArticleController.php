@@ -55,6 +55,7 @@ class ArticleController extends Controller
         ]);
         $article = new Article();
         $article->title = $request->title;
+        $article->slug = Str::slug($request->title)."_".uniqid();
         $article->description = $request->description;
         $article->category_id = $request->category;
         $article->user_id = Auth::id();
@@ -99,6 +100,9 @@ class ArticleController extends Controller
             "title"=>'required|min:5|max:200',
             "description"=>'required|min:10'
         ]);
+        if($article->title != $request->title){
+            $article->slug = Str::slug($request->title)."_".uniqid();
+        }
         $article->title = $request->title;
         $article->description = $request->description;
         $article->category_id = $request->category;
