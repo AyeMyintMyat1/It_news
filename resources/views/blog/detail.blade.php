@@ -38,6 +38,9 @@
                             <i class="feather-chevron-left"></i>
                         </a>
                     @endisset
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi consequatur dignissimos dolorem,
+                           eaque excepturi nemo odio quo, ratione sed sunt ut voluptatem! Delectus fugit incidunt natu
+                           s nesciunt omnis rem voluptate.
                     <a class="btn btn-outline-primary px-3 rounded-pill" href="{{ route('index') }}">
                         Read All
                     </a>
